@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from 'react';
+
+/* Styles */
 import '../styles/App.css';
-import '../styles/theme.css'; // Importando o tema CSS
+import '../styles/theme.css';
+
+/* Hooks */
 import useTitle from '../hooks/useTitle';
+import useFavicon from '../hooks/useFavicon'; 
 
 function App() {
+  /* Use Hooks */
   const [appName, setAppName] = useState('Site');
 
   useTitle(appName);
+  useFavicon('%PUBLIC_URL%/../assets/favicon.svg');
 
   useEffect(() => {
-    // Buscar o short_name do manifest.json
     fetch('/manifest.json')
       .then(response => response.json())
-      .then(data => setAppName(data.short_name || 'Site'))
+      .then(data => setAppName(data.short_name || 'My Portfolio'))
       .catch(error => console.error('Error fetching manifest:', error));
   }, []);
 
   return (
     <div className="App">
-      <header className="App-header" style={{ color: 'var(--text)' , background: 'var(--background)' }}>
+      <header className="App-header" style={{ color: 'var(--theme-text)' , background: 'var(--theme-background)' }}>
         <p>
           Edit <code>src/app/App.js</code> and save to reload.
         </p>

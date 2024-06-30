@@ -1,18 +1,59 @@
+@charset "UTF-8";
+@import url('https://fh-shadow.github.io/DevImports/Styles/CSS/reset.css');
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../../public/assets/fonts/Inter-VariableFont_slnt\,wght.ttf') format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../../public/assets/fonts/JetBrainsMono[wght].ttf') format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --typo-regular: 'Inter', Sans-Serif;
+  --typo-code: 'JetBrains Mono', Monospace;
+  --typo-size: 16px;
+  --typo-height: 27px;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
-    --text: #121617;
-    --background: #e8eced;
-    --primary: #3e5860;
-    --secondary: #a69ab7;
-    --accent: #88592b;
+    --theme-text: #121617;
+    --theme-background: #e8eced;
+    --theme-primary: #3e5860;
+    --theme-secondary: #a69ab7;
+    --theme-accent: #88592b;
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #e8eced;
-    --background: #111516;
-    --primary: #9eb8c1;
-    --secondary: #544865;
-    --accent: #d4a475;
+    --theme-text: #e8eced;
+    --theme-background: #111516;
+    --theme-primary: #9eb8c1;
+    --theme-secondary: #544865;
+    --theme-accent: #d4a475;
   }
 }
+
+* {
+  font-family: var(--typo-regular);
+  font-size: var(--typo-size);
+  line-height: var(--typo-height);
+}
+code { font-family: var(--typo-code); }
+
+body { font-weight: 400; }
+h1, h2, h3, h4, h5 { font-weight: 700; }
+
+h1 { font-size: 7.595rem; line-height: 10.000rem; }
+h2 { font-size: 5.063rem; line-height: 8.625rem; }
+h3 { font-size: 3.375rem; line-height: 5.750rem; }
+h4 { font-size: 2.250rem; line-height: 3.813rem; }
+h5 { font-size: 1.500rem; line-height: 2.563rem; }
+small { font-size: 0.667rem; line-height: 1.188rem; }
