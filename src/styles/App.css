@@ -5,6 +5,10 @@
   color: var(--theme-text);
   scroll-behavior: smooth;
 }
+*::selection {
+  background-color: color-mix(in srgb, var(--theme-secondary) 50%, var(--theme-background));
+}
+
 code { font-family: var(--typo-code); }
 
 body { font-weight: 400; background-color: var(--theme-background); }

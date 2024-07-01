@@ -20,7 +20,7 @@
 .main .mainSection {
     min-height: 100dvh;
     
-    padding: 6rem 3rem;
+    padding: 8rem 6rem;
 }
 
 .main .mainSection:nth-child(1) {
@@ -28,9 +28,14 @@
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
 
+    h2 {
+        text-wrap: balance;
+    }
+
     h5 {
         color: color-mix(in srgb, var(--theme-text) 80%, var(--theme-background));
-        margin-bottom: .5rem;
+        margin-top: .5rem;
+        /* margin-bottom: .5rem; */
     }
 
     h6 {
