@@ -1,5 +1,6 @@
 import React from "react";
 // import Button from './Button';
+import Grid from './Grid';
 
 // import { IonIcon } from '@ionic/react';
 import '../icons';
@@ -14,6 +15,7 @@ const Main = () => {
                     <h2>Welcome, I'm Flávio Henrique</h2>
                     <h5>Front-End Developer & UI Designer</h5>
                 </div>
+                <Grid />
             </section>
             <section className="mainSection" id="my-skills">DS</section>
             <section className="mainSection" id="projects">GFDS</section>

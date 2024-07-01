@@ -1,0 +1,11 @@
+.gridContainer {
+    display: grid;
+    place-items: center;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+.gridContainer .gridPath {
+    fill: var(--theme-text);
+}
