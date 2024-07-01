@@ -40,20 +40,3 @@
     --theme-accent: #d4a475;
   }
 }
-
-* {
-  font-family: var(--typo-regular);
-  font-size: var(--typo-size);
-  line-height: var(--typo-height);
-}
-code { font-family: var(--typo-code); }
-
-body { font-weight: 400; }
-h1, h2, h3, h4, h5 { font-weight: 700; }
-
-h1 { font-size: 7.595rem; line-height: 10.000rem; }
-h2 { font-size: 5.063rem; line-height: 8.625rem; }
-h3 { font-size: 3.375rem; line-height: 5.750rem; }
-h4 { font-size: 2.250rem; line-height: 3.813rem; }
-h5 { font-size: 1.500rem; line-height: 2.563rem; }
-small { font-size: 0.667rem; line-height: 1.188rem; }
