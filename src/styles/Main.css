@@ -34,20 +34,15 @@
 
     h5 {
         color: color-mix(in srgb, var(--theme-text) 80%, var(--theme-background));
-        
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        flex-direction: row;
-        
-        gap: .5rem;
+
     }
     
     .ion-icon {
         color: color-mix(in srgb, var(--theme-text) 80%, var(--theme-background));
-
+        
         font-size: 1.5rem;
         --ionicon-stroke-width: 3rem;
+        vertical-align: middle;
     }
 }
 
