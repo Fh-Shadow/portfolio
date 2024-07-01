@@ -4,6 +4,9 @@
 
     user-select: none;
     pointer-events: none;
+    
+    z-index: -1;
+    isolation: isolate;
 }
 
 .gridContainer .gridPath {

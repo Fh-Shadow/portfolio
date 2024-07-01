@@ -29,6 +29,7 @@ a {
 
 .App, html, body {
   min-height: 100dvh;
+  overflow-x: hidden;
 }
 
 .App {
