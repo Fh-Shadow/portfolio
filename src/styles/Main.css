@@ -34,8 +34,6 @@
 
     h5 {
         color: color-mix(in srgb, var(--theme-text) 80%, var(--theme-background));
-        margin-top: .5rem;
-        /* margin-bottom: .5rem; */
     }
 
     h6 {
