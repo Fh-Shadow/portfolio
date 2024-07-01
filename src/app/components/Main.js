@@ -17,9 +17,9 @@ const Main = () => {
                 </div>
                 <Grid />
             </section>
-            <section className="mainSection" id="my-skills">DS</section>
-            <section className="mainSection" id="projects">GFDS</section>
-            <section className="mainSection" id="meet-me">32D</section>
+            <section className="mainSection" id="my-skills">What</section>
+            <section className="mainSection" id="projects">do you</section>
+            <section className="mainSection" id="meet-me">find here?</section>
         </main>
     );
 };
