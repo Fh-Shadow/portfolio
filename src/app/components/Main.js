@@ -1,11 +1,11 @@
-import React from "react";
-// import Button from './Button';
-import Grid from './Grid';
+import React from "react"
+// import Button from './Button'
+import Grid from './Grid'
 
-import { IonIcon } from '@ionic/react';
-import '../icons';
+import { IonIcon } from '@ionic/react'
+import '../icons'
 
-import '../../styles/Main.css';
+import '../../styles/Main.css'
 
 const Main = () => {
     return (
@@ -21,7 +21,7 @@ const Main = () => {
             <section className="mainSection" id="projects">do you</section>
             <section className="mainSection" id="meet-me">find here?</section>
         </main>
-    );
-};
+    )
+}
 
-export default Main;
+export default Main

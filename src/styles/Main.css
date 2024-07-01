@@ -39,6 +39,7 @@
     
     .ion-icon {
         color: color-mix(in srgb, var(--theme-text) 40%, var(--theme-secondary));
+        cursor: text;
         
         font-size: 1.5rem;
         --ionicon-stroke-width: 3rem;
@@ -46,12 +47,24 @@
     }
 }
 
+@keyframes move-grid {
+    from {
+      transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
 .gridContainer {
     position: absolute;
-    top: -30rem;
-    right: -20rem;
+    top: -20rem;
+    right: 20rem;
 
-    transform: scale(90%) rotate(-20deg);
+    rotate: -20deg;
+    scale: 90%;
+    animation: move-grid .3s ease-in-out;
+    animation-timeline: view();
 }
 
 .gridContainer::after {
