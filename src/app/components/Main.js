@@ -1,21 +1,30 @@
-import React from "react"
-import '../../styles/Main.css'
+import React from "react";
+import Button from './Button';
+
+import { IonIcon } from '@ionic/react';
+import '../icons';
+
+import '../../styles/Main.css';
 
 const Main = () => {
     return (
         <main className="main">
             <section className="mainSection" id="hello-there">
-                <h5>Hello Everyone! I'm Flávio, and I'm a</h5>
-                <h1>Fronted Developer</h1>
+                <div className="hellothere">
+                    <h3>Welcome, I'm Flávio Henrique</h3>
+                    <h5>Front-End Developer & UI Designer</h5>
+                    <h6>I'm fascinated by organization and standardization, aiming for efficiency and results to turn dreams into reality.</h6>
+                </div>
+                
+                <div className="container">
+                    
+                </div>
             </section>
-            <section className="mainSection" id="my-skills">
-                <h5>This project uses</h5>
-                <h1>React JS</h1>
-            </section>
-            <section className="mainSection" id="projects">o</section>
-            <section className="mainSection" id="meet-me"><a href="./">i</a> agora o que eu poderei fazer!? LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM</section>
+            <section className="mainSection" id="my-skills">DS</section>
+            <section className="mainSection" id="projects">GFDS</section>
+            <section className="mainSection" id="meet-me">32D</section>
         </main>
-    )
-}
+    );
+};
 
-export default Main
+export default Main;

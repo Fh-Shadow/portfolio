@@ -1,0 +1,154 @@
+.button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: .5rem 1rem;
+    margin: .5rem;
+
+    border: none;
+    border-radius: .5rem;
+    outline: none;
+
+    cursor: pointer;
+    user-select: none;
+
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        transform: translateY(-.15rem);
+    }
+}
+
+.buttonLabel {
+    font-size: .5rem;
+    text-wrap: nowrap;
+
+    padding: 0 .5rem;
+}
+
+.buttonIcon {
+    display: grid;
+    place-items: center;
+
+    ion-icon {
+        font-size: 1.1rem;
+        --ionicon-stroke-width: 2rem;
+    }
+}
+
+.button-primary {
+    background-color: var(--theme-primary);
+    
+    * {
+        color: var(--theme-background);
+    }
+
+    &:hover {
+        box-shadow: 0 0 2.5rem -.5rem var(--theme-primary);
+    }
+}
+
+.button-secondary {
+    background: color-mix(in srgb, var(--theme-secondary) 30%, var(--theme-background));
+
+    * {
+        color: var(--theme-text);
+    }
+}
+
+.button-success {
+    background-color: var(--theme-success);
+
+    * {
+        color: var(--theme-background);
+    }
+
+    &:hover {
+        box-shadow: 0 0 2.5rem -.5rem var(--theme-success);
+    }
+}
+
+.button-error {
+    background-color: var(--theme-error);
+
+    * {
+        color: var(--theme-background);
+    }
+
+    &:hover {
+        box-shadow: 0 0 2.5rem -.5rem var(--theme-error);
+    }
+}
+
+.button-warning {
+    background-color: var(--theme-warning);
+
+    * {
+        color: var(--theme-background);
+    }
+
+    &:hover {
+        box-shadow: 0 0 2.5rem -.5rem var(--theme-warning);
+    }
+}
+
+.button-primary-disabled {
+    background-color: color-mix(in srgb, var(--theme-primary) 10%, var(--theme-background));
+    
+    * {
+        color: color-mix(in srgb, var(--theme-primary) 40%, var(--theme-background));
+    }
+
+    &:hover {
+        transform: translateY(0);
+    }
+}
+
+.button-secondary-disabled {
+    background-color: color-mix(in srgb, var(--theme-secondary) 15%, var(--theme-background));
+    
+    * {
+        color: color-mix(in srgb, var(--theme-background) 10%, var(--theme-secondary));
+    }
+
+    &:hover {
+        transform: translateY(0);
+    }
+}
+
+.button-success-disabled {
+    background-color: color-mix(in srgb, var(--theme-success) 5%, var(--theme-background));
+    
+    * {
+        color: color-mix(in srgb, var(--theme-success) 35%, var(--theme-background));
+    }
+
+    &:hover {
+        transform: translateY(0);
+    }
+}
+
+.button-error-disabled {
+    background-color: color-mix(in srgb, var(--theme-error) 10%, var(--theme-background));
+    
+    * {
+        color: color-mix(in srgb, var(--theme-error) 45%, var(--theme-background));
+    }
+
+    &:hover {
+        transform: translateY(0);
+    }
+}
+
+.button-warning-disabled {
+    background-color: color-mix(in srgb, var(--theme-warning) 8%, var(--theme-background));
+    
+    * {
+        color: color-mix(in srgb, var(--theme-warning) 35%, var(--theme-background));
+    }
+
+    &:hover {
+        transform: translateY(0);
+    }
+}

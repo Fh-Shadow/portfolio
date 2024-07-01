@@ -20,6 +20,10 @@
   --typo-code: 'JetBrains Mono', Monospace;
   --typo-size: 16px;
   --typo-height: 27px;
+
+  --theme-success: #2dc164;
+  --theme-warning: #f0994b;
+  --theme-error: #f80759;
 }
 
 @media (prefers-color-scheme: light) {
