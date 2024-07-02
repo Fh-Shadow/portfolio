@@ -3,7 +3,7 @@ import React from "react"
 import Grid from './Grid'
 
 import { IonIcon } from '@ionic/react'
-import '../icons'
+import { logoHtml5, logoCss3 } from 'ionicons/icons'
 
 import '../../styles/Main.css'
 
@@ -17,7 +17,19 @@ const Main = () => {
                 </div>
                 <Grid />
             </section>
-            <section className="mainSection" id="my-skills">What</section>
+            <section className="mainSection" id="my-skills">
+                <div className="myskills">
+                    <div className="skillList">
+                        <IonIcon className="skillItem" icon={logoHtml5} />
+                        <IonIcon className="skillItem" icon={logoCss3} />
+                        <IonIcon className="skillItem" icon="logo-javascript" />
+                        <IonIcon className="skillItem" icon="logo-python" />
+                        <IonIcon className="skillItem" icon="logo-nodejs" />
+                        <IonIcon className="skillItem" icon="logo-react" />
+                        <IonIcon className="skillItem" icon="logo-markdown" />
+                    </div>
+                </div>
+            </section>
             <section className="mainSection" id="projects">do you</section>
             <section className="mainSection" id="meet-me">found here?</section>
         </main>

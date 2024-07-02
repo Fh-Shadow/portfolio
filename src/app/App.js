@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './icons'
 
 /* Components */
 import Nav from './components/Nav'
@@ -17,7 +18,7 @@ function App() {
     /* Use Hooks */
     const [appName, setAppName] = useState('Site')
 
-    useTitle(appName);
+    useTitle(appName)
     useFavicon('%PUBLIC_URL%/../assets/favicon.svg')
 
     useEffect(() => {
@@ -25,7 +26,7 @@ function App() {
             .then(response => response.json())
             .then(data => setAppName(data.short_name || 'My Portfolio'))
             .catch(error => console.error('Error fetching manifest:', error))
-    }, []);
+    }, [])
 
    return (
         <div className="App">
