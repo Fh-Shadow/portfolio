@@ -74,3 +74,20 @@
 .main .mainSection:nth-child(2) {
     display: grid;
 }
+
+.main .mainSection:nth-child(2) li {
+    list-style: none;
+}
+
+.skillItem {
+    font-size: 2.5rem;
+}
+
+.myskills > ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.myskills > ul > li {
+    display: flex;
+}
