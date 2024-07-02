@@ -70,3 +70,7 @@
 .gridContainer .grid .gridPath {
     fill: color-mix(in srgb, var(--theme-text) 80%, var(--theme-background));
 }
+
+.main .mainSection:nth-child(2) {
+    display: grid;
+}

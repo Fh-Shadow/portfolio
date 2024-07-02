@@ -19,15 +19,80 @@ const Main = () => {
             </section>
             <section className="mainSection" id="my-skills">
                 <div className="myskills">
-                    <div className="skillList">
-                        <IonIcon className="skillItem" icon={logoHtml5} />
-                        <IonIcon className="skillItem" icon={logoCss3} />
-                        <IonIcon className="skillItem" icon="logo-javascript" />
-                        <IonIcon className="skillItem" icon="logo-python" />
-                        <IonIcon className="skillItem" icon="logo-nodejs" />
-                        <IonIcon className="skillItem" icon="logo-react" />
-                        <IonIcon className="skillItem" icon="logo-markdown" />
-                    </div>
+                    <h2>These are my skills</h2>
+                    <ul>
+                        <li>
+                            <div className="skillIcon">
+                                <IonIcon className="skillItem" icon={logoHtml5} />
+                            </div>
+                            <div className="skillDescription">
+                                <h5>HTML 5</h5>
+                                <ul>
+                                    <li>Domínio em tabelas e listas</li>
+                                    <li>Bom em APIs e Canvas</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="skillIcon">
+                                <IonIcon className="skillItem" icon={logoCss3} />
+                            </div>
+                            <div className="skillDescription">
+                                <h5>CSS 3</h5>
+                                <ul>
+                                    <li>Bom em responsividade</li>
+                                    <li>Domínio em layouts</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="skillIcon">
+                                <IonIcon className="skillItem" icon="logo-javascript" />
+                            </div>
+                            <div className="skillDescription">
+                                <h5>JavaScript</h5>
+                                <ul>
+                                    <li>Bom em funções e objetos</li>
+                                    <li>Bom em tratamento de erros</li>
+                                    <li>aprendendo usar módulos</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="skillIcon">
+                                <IonIcon className="skillItem" icon="logo-python" />
+                            </div>
+                            <div className="skillDescription">
+                                <h5>Python</h5>
+                                <ul>
+                                    <li>aprendendo usar APIs</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="skillIcon">
+                                <IonIcon className="skillItem" icon="server-outline" />
+                            </div>
+                            <div className="skillDescription">
+                                <h5>MySQL</h5>
+                                <ul>
+                                    <li>bom em tratamento de dados</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="skillIcon">
+                                <IonIcon className="skillItem" icon="logo-react" />
+                            </div>
+                            <div className="skillDescription">
+                                <h5>React</h5>
+                                <ul>
+                                    <li>aprendendo usar componentização</li>
+                                    <li>aprendendo usar módulos</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </section>
             <section className="mainSection" id="projects">do you</section>
