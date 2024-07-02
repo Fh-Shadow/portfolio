@@ -111,6 +111,9 @@ const Main = () => {
             <section className="mainSection" id="meet-me">
                 <div className="meetme">
                     <h2>Meet me there!</h2>
+                    <div className="meetcontainer">
+                        <img src="../../assets/myself.svg" alt="Hello! It's me Flávio" />
+                    </div>
                 </div>
             </section>
         </main>
