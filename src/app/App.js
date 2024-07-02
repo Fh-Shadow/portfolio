@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './icons'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
 /* Components */
 import Nav from './components/Nav'
