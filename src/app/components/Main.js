@@ -82,6 +82,17 @@ const Main = () => {
                         </li>
                         <li>
                             <div className="skillIcon">
+                                <IonIcon className="skillItem" icon="server-outline" />
+                            </div>
+                            <div className="skillDescription">
+                                <h5>MySQL</h5>
+                                <ul>
+                                    <li>bom em tratamento de dados</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="skillIcon">
                                 <IonIcon className="skillItem" icon="logo-react" />
                             </div>
                             <div className="skillDescription">
