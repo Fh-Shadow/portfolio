@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import '../../styles/Button.css'
 
 // Função para instanciar botões simples
-const SimpleButton = ({ icon, label, type, handleClick }) => (
-  <button className={`button button-${type}`} onClick={handleClick}>
+const SimpleButton = ({ icon, label, type, className, disabled, handleClick }) => (
+  <button className={`button button-${type} ${className} ${disabled ? 'disabled' : ''}`} disabled={disabled} onClick={handleClick}>
     {icon && <div className="buttonIcon">{icon}</div>}
     {label && <div className="buttonLabel">{label}</div>}
   </button>
@@ -21,20 +21,16 @@ const handleRedirect = (redirect) => {
 }
 
 // Função para lidar com ações
-const handleAction = async (action) => {
+const handleAction = async (action, targetElement) => {
   const { type: actionType, target, condition } = action
   if (!condition || condition()) {
     try {
-      const targetElement = document.querySelector(target)
-      console.log('Target Element:', targetElement)
       switch (actionType) {
         case 'disable':
-          targetElement.classList.add(`${targetElement.className.split(' ').join('-')}-disable`)
-          targetElement.disabled = true
+          targetElement.classList.add('disabled')
           break
         case 'enable':
-          targetElement.classList.remove(`${targetElement.className.split(' ').join('-')}-disable`)
-          targetElement.disabled = false
+          targetElement.classList.remove('disabled')
           break
         case 'send':
           fetch(target, { method: 'POST' })
@@ -66,12 +62,18 @@ const handleClick = async (type, redirect, action) => {
   }
 
   if (action) {
-    handleAction(action)
+    const { target } = action
+    const targetElement = document.querySelector(target)
+    if (targetElement) {
+      handleAction(action, targetElement)
+    } else {
+      console.warn(`Element not found for target: ${target}`)
+    }
   }
 }
 
 // Componente principal Button
-const Button = ({ icon, label, type = "secondary", redirect, action }) => {
+const Button = ({ icon, label, type = "secondary", redirect, action, className = '', disabled = false }) => {
   // Verificação de icon & label
   if (!icon && !label) {
     throw new Error('Either <icon> or <label> must be provided')
@@ -84,6 +86,8 @@ const Button = ({ icon, label, type = "secondary", redirect, action }) => {
         icon={icon} 
         label={label} 
         type={type} 
+        className={className}
+        disabled={disabled}
         handleClick={() => handleClick(type, redirect, action)} 
       />
     )
@@ -96,6 +100,8 @@ const Button = ({ icon, label, type = "secondary", redirect, action }) => {
         icon={icon} 
         label={label} 
         type={type} 
+        className={className}
+        disabled={disabled}
         handleClick={() => handleClick(type, redirect, null)} 
       />
     )
@@ -107,6 +113,8 @@ const Button = ({ icon, label, type = "secondary", redirect, action }) => {
       icon={icon} 
       label={label} 
       type={type} 
+      className={className}
+      disabled={disabled}
       handleClick={() => handleClick(type, redirect, action)} 
     />
   )
@@ -122,11 +130,6 @@ Button.propTypes = {
     "success",
     "error",
     "warning",
-    "primary-disabled",
-    "secondary-disabled",
-    "success-disabled",
-    "error-disabled",
-    "warning-disabled",
   ]),
   redirect: PropTypes.shape({
     url: PropTypes.string.isRequired,
@@ -138,6 +141,8 @@ Button.propTypes = {
     condition: PropTypes.func,
     content: PropTypes.string,
   }),
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
 }
 
 export default Button

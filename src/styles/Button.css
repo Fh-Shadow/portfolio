@@ -93,7 +93,7 @@
     }
 }
 
-.button-primary-disabled {
+.button-primary.disabled {
     background-color: color-mix(in srgb, var(--theme-primary) 10%, var(--theme-background));
     pointer-events: none;
     
@@ -106,7 +106,7 @@
     }
 }
 
-.button-secondary-disabled {
+.button-secondary.disabled {
     background-color: color-mix(in srgb, var(--theme-secondary) 15%, var(--theme-background));
     pointer-events: none;
     
@@ -119,7 +119,7 @@
     }
 }
 
-.button-success-disabled {
+.button-success.disabled {
     background-color: color-mix(in srgb, var(--theme-success) 5%, var(--theme-background));
     pointer-events: none;
     
@@ -132,7 +132,7 @@
     }
 }
 
-.button-error-disabled {
+.button-error.disabled {
     background-color: color-mix(in srgb, var(--theme-error) 10%, var(--theme-background));
     pointer-events: none;
     
@@ -145,7 +145,7 @@
     }
 }
 
-.button-warning-disabled {
+.button-warning.disabled {
     background-color: color-mix(in srgb, var(--theme-warning) 8%, var(--theme-background));
     pointer-events: none;
     
