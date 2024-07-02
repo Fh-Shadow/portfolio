@@ -3,6 +3,7 @@ ABOUT PROJECT
  - type: Portfolio
  - description: This site was developed to show a little about who I am and what my skills are by putting them to the test
  - fonts: Inter, JetBrains Mono
+ - license: MIT License
 
 DEVELOPMENT
  - author: Flávio Henrique
