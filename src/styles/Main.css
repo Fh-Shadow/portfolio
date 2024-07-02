@@ -70,11 +70,11 @@
 .gridContainer::after {
     content: '';
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: radial-gradient(ellipse at top right, var(--theme-background) -10%, transparent 50%), radial-gradient(ellipse at top left, var(--theme-background) -10%, transparent 50%), radial-gradient(ellipse at bottom left, var(--theme-background) -10%, transparent 50%), radial-gradient(ellipse at bottom right, var(--theme-background) -10%, transparent 50%);
+    top: -1rem;
+    bottom: -1rem;
+    left: -1rem;
+    right: -1rem;
+    background: radial-gradient(ellipse at top right, var(--theme-background) -20%, transparent 50%), radial-gradient(ellipse at top left, var(--theme-background) -20%, transparent 50%), radial-gradient(ellipse at bottom left, var(--theme-background) 15%, transparent 40%), radial-gradient(ellipse at bottom right, var(--theme-background) -20%, transparent 50%);
 }
 
 .gridContainer .grid .gridPath {
