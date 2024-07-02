@@ -96,10 +96,21 @@
     display: flex;
 
     gap: 1rem;
+    padding: 1rem;
 
     align-items: center;
+    cursor: pointer;
 
+    transition: all .3s ease-in-out;
+    
     li {
         color: color-mix(in srgb, var(--theme-text) 60%, var(--theme-secondary));
     }
+}
+
+.myskills > ul > li:hover {
+    background-color: color-mix(in srgb, var(--theme-primary) 10%, var(--theme-background));
+    transform: scale(105%);
+
+    transition: all .3s ease-in-out;
 }
