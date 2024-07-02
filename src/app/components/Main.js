@@ -1,5 +1,5 @@
 import React from "react"
-// import Button from './Button'
+import Button from './Button'
 import Grid from './Grid'
 
 import { IonIcon } from '@ionic/react'
@@ -111,8 +111,33 @@ const Main = () => {
             <section className="mainSection" id="meet-me">
                 <div className="meetme">
                     <h2>Meet me there!</h2>
-                    <div className="meetcontainer">
-                        <img src="../../assets/myself.svg" alt="Hello! It's me Flávio" />
+                    <div className="meetContainer">
+                        <div class="meetImage">
+                            <img src="../../assets/myself.svg" alt="Hello! It's me Flávio" />
+                        </div>
+                        <div className="meetDescription">
+                            <Button
+                                label="See my Github"
+                                icon={<IonIcon icon="logo-github" />}
+                                redirect={{
+                                    url: 'https://github.com/Fh-Shadow',
+                                    blank: true,
+                                }}
+                            />
+                            <Button
+                                label="See my Linkedin"
+                                icon={<IonIcon icon="logo-linkedin" />}
+                                redirect={{
+                                    url: 'https://www.linkedin.com/in/fl%C3%A1vio-henrique-perusin-de-souza-a51321315/',
+                                    blank: true,
+                                }}
+                            />
+                            <Button
+                                label="Send message with Gmail"
+                                icon={<IonIcon icon="mail" />}
+                                type="primary"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
