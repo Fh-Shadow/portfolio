@@ -34,7 +34,7 @@
 
     h5 {
         color: color-mix(in srgb, var(--theme-text) 40%, var(--theme-secondary));
-
+        font-family: var(--typo-code);
     }
     
     .ion-icon {
