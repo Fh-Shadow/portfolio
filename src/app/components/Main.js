@@ -19,7 +19,7 @@ const Main = () => {
             </section>
             <section className="mainSection" id="my-skills">What</section>
             <section className="mainSection" id="projects">do you</section>
-            <section className="mainSection" id="meet-me">find here?</section>
+            <section className="mainSection" id="meet-me">found here?</section>
         </main>
     )
 }
