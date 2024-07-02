@@ -107,7 +107,7 @@ const Main = () => {
                     </ul>
                 </div>
             </section>
-            <section className="mainSection" id="projects">do you</section>
+            <section className="mainSection" id="projects">Nothing yet...</section>
             <section className="mainSection" id="meet-me">
                 <div className="meetme">
                     <h2>Meet me there!</h2>
