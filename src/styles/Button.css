@@ -95,6 +95,7 @@
 
 .button-primary-disabled {
     background-color: color-mix(in srgb, var(--theme-primary) 10%, var(--theme-background));
+    pointer-events: none;
     
     * {
         color: color-mix(in srgb, var(--theme-primary) 40%, var(--theme-background));
@@ -107,6 +108,7 @@
 
 .button-secondary-disabled {
     background-color: color-mix(in srgb, var(--theme-secondary) 15%, var(--theme-background));
+    pointer-events: none;
     
     * {
         color: color-mix(in srgb, var(--theme-background) 10%, var(--theme-secondary));
@@ -119,6 +121,7 @@
 
 .button-success-disabled {
     background-color: color-mix(in srgb, var(--theme-success) 5%, var(--theme-background));
+    pointer-events: none;
     
     * {
         color: color-mix(in srgb, var(--theme-success) 35%, var(--theme-background));
@@ -131,6 +134,7 @@
 
 .button-error-disabled {
     background-color: color-mix(in srgb, var(--theme-error) 10%, var(--theme-background));
+    pointer-events: none;
     
     * {
         color: color-mix(in srgb, var(--theme-error) 45%, var(--theme-background));
@@ -143,6 +147,7 @@
 
 .button-warning-disabled {
     background-color: color-mix(in srgb, var(--theme-warning) 8%, var(--theme-background));
+    pointer-events: none;
     
     * {
         color: color-mix(in srgb, var(--theme-warning) 35%, var(--theme-background));
