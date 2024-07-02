@@ -1,93 +1,113 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import '../../styles/Button.css'
 
-function Button({ icon, label, type = "secondary", redirect, action }) {
-  // Função para aguardar a existência do elemento alvo
-  const waitForElement = (selector, timeout = 1000) => {
-    return new Promise((resolve, reject) => {
-      const interval = 50
-      let elapsedTime = 0
+// Função para instanciar botões simples
+const SimpleButton = ({ icon, label, type, handleClick }) => (
+  <button className={`button button-${type}`} onClick={handleClick}>
+    {icon && <div className="buttonIcon">{icon}</div>}
+    {label && <div className="buttonLabel">{label}</div>}
+  </button>
+)
 
-      const checkExist = setInterval(() => {
-        const element = document.querySelector(selector)
-        if (element) {
-          clearInterval(checkExist)
-          resolve(element)
-        } else if (elapsedTime >= timeout) {
-          clearInterval(checkExist)
-          reject(new Error(`Element not found for target: ${selector}`))
-        }
-        elapsedTime += interval
-      }, interval)
-    })
+// Função para redirecionar
+const handleRedirect = (redirect) => {
+  const { url, blank } = redirect
+  if (blank) {
+    window.open(url, '_blank')
+  } else {
+    window.location.href = url
   }
+}
 
-  // Actions & Other Logics
-  const handleClick = async () => {
-    // Cancel all if disabled
-    if (type.includes('disabled')) {
-      return
-    }
-
-    // Redirect with two parameters
-    if (redirect) {
-      const { url, blank } = redirect
-      if (blank) {
-        window.open(url, '_blank')
-      } else {
-        window.location.href = url
+// Função para lidar com ações
+const handleAction = async (action) => {
+  const { type: actionType, target, condition } = action
+  if (!condition || condition()) {
+    try {
+      const targetElement = document.querySelector(target)
+      switch (actionType) {
+        case 'disable':
+          targetElement.classList.add(`${targetElement.className.split(' ').join('-')}-disable`)
+          targetElement.disabled = true
+          break
+        case 'enable':
+          targetElement.classList.remove(`${targetElement.className.split(' ').join('-')}-disable`)
+          targetElement.disabled = false
+          break
+        case 'send':
+          fetch(target, { method: 'POST' })
+          break
+        case 'pull':
+          fetch(target).then(response => response.json())
+          break
+        case 'refresh':
+          window.location.reload()
+          break
+        case 'change':
+          targetElement.textContent = action.content
+          break
+        default:
+          console.warn('Unknown action type')
       }
-    }
-
-    if (action) {
-      const { type: actionType, target, condition } = action
-      if (!condition || condition()) {
-        try {
-          const targetElement = await waitForElement(target)
-          // Action list cases
-          switch (actionType) {
-            case 'disable': // Disable something
-              targetElement.classList.add(`${targetElement.className.split(' ').join('-')}-disable`)
-              targetElement.disabled = true
-              break
-            case 'enable': // Enable something
-              targetElement.classList.remove(`${targetElement.className.split(' ').join('-')}-disable`)
-              targetElement.disabled = false
-              break
-            case 'send': // Send something
-              fetch(target, { method: 'POST' })
-              break
-            case 'pull': // Pull something
-              fetch(target).then(response => response.json())
-              break
-            case 'refresh': // Refresh something
-              window.location.reload()
-              break
-            case 'change': // Change something
-              targetElement.textContent = action.content
-              break
-            default: // Error no parameters provided
-              console.warn('Unknown action type')
-          }
-        } catch (error) {
-          console.warn(error.message)
-        }
-      }
+    } catch (error) {
+      console.warn(error.message)
     }
   }
+}
 
-  // Icon & Label
+// Função para lidar com o clique do botão
+const handleClick = async (type, redirect, action) => {
+  if (type.includes('disabled')) return
+
+  if (redirect) {
+    handleRedirect(redirect)
+  }
+
+  if (action) {
+    handleAction(action)
+  }
+}
+
+// Componente principal Button
+const Button = ({ icon, label, type = "secondary", redirect, action }) => {
+  // Verificação de icon & label
   if (!icon && !label) {
     throw new Error('Either <icon> or <label> must be provided')
   }
 
+  // Renderização de Botão Simples se não houver redirect ou action
+  if (!redirect && !action) {
+    return (
+      <SimpleButton 
+        icon={icon} 
+        label={label} 
+        type={type} 
+        handleClick={() => handleClick(type, redirect, action)} 
+      />
+    )
+  }
+
+  // Renderização de Botão de Redirecionamento se apenas redirect for fornecido
+  if (redirect && !action) {
+    return (
+      <SimpleButton 
+        icon={icon} 
+        label={label} 
+        type={type} 
+        handleClick={() => handleClick(type, redirect, null)} 
+      />
+    )
+  }
+
+  // Renderização de Botão de Ação se action for fornecido (com ou sem redirect)
   return (
-    <button className={`button button-${type}`} onClick={handleClick}>
-      {icon && <div className="buttonIcon">{icon}</div>}
-      {label && <div className="buttonLabel">{label}</div>}
-    </button>
+    <SimpleButton 
+      icon={icon} 
+      label={label} 
+      type={type} 
+      handleClick={() => handleClick(type, redirect, action)} 
+    />
   )
 }
 
