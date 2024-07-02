@@ -47,7 +47,8 @@ const handleAction = async (action, targetElement) => {
                     } else {
                         const refreshElement = document.querySelector(target)
                         if (refreshElement) {
-                            refreshElement.innerHTML = refreshElement.innerHTML // trigger re-render
+                            const children = [...refreshElement.childNodes];
+                            refreshElement.replaceChildren(...children); // trigger re-render
                         }
                     }
                     break
