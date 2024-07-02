@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import '../../styles/Button.css'
 
-// Função para instanciar botões simples
+// create button with basic parameters
 const SimpleButton = ({ icon, label, type, className, disabled, handleClick }) => (
   <button className={`button button-${type} ${className} ${disabled ? 'disabled' : ''}`} disabled={disabled} onClick={handleClick}>
     {icon && <div className="buttonIcon">{icon}</div>}
@@ -10,7 +10,7 @@ const SimpleButton = ({ icon, label, type, className, disabled, handleClick }) =
   </button>
 )
 
-// Função para redirecionar
+// redirect with two parameters
 const handleRedirect = (redirect) => {
   const { url, blank } = redirect
   if (blank) {
@@ -20,42 +20,42 @@ const handleRedirect = (redirect) => {
   }
 }
 
-// Função para lidar com ações
+// async function for actions
 const handleAction = async (action, targetElement) => {
   const { type: actionType, target, condition } = action
   if (!condition || condition()) {
     try {
       switch (actionType) {
-        case 'disable':
+        case 'disable': // desable something
           targetElement.classList.add('disabled')
           break
-        case 'enable':
+        case 'enable': // enable something
           targetElement.classList.remove('disabled')
           break
-        case 'send':
+        case 'send': // send something
           fetch(target, { method: 'POST' })
           break
-        case 'pull':
+        case 'pull': // pull something
           fetch(target).then(response => response.json())
           break
-        case 'refresh':
+        case 'refresh': // refresh something
           window.location.reload()
           break
-        case 'change':
+        case 'change': // change something
           targetElement.textContent = action.content
           break
-        default:
+        default: // no parameters error
           console.warn('Unknown action type')
       }
     } catch (error) {
-      console.warn(error.message)
+      console.warn(error.message) // if something gets wrong
     }
   }
 }
 
-// Função para lidar com o clique do botão
+// onclick
 const handleClick = async (type, redirect, action) => {
-  if (type.includes('disabled')) return
+  if (type.includes('disabled')) return // buttons with disabled dont change
 
   if (redirect) {
     handleRedirect(redirect)
@@ -72,14 +72,14 @@ const handleClick = async (type, redirect, action) => {
   }
 }
 
-// Componente principal Button
+// main button
 const Button = ({ icon, label, type = "secondary", redirect, action, className = '', disabled = false }) => {
-  // Verificação de icon & label
+  // icon & label verification
   if (!icon && !label) {
     throw new Error('Either <icon> or <label> must be provided')
   }
 
-  // Renderização de Botão Simples se não houver redirect ou action
+  // render button with basic parameters
   if (!redirect && !action) {
     return (
       <SimpleButton 
@@ -93,7 +93,7 @@ const Button = ({ icon, label, type = "secondary", redirect, action, className =
     )
   }
 
-  // Renderização de Botão de Redirecionamento se apenas redirect for fornecido
+  // render button with basic parameters & redirect
   if (redirect && !action) {
     return (
       <SimpleButton 
@@ -107,7 +107,7 @@ const Button = ({ icon, label, type = "secondary", redirect, action, className =
     )
   }
 
-  // Renderização de Botão de Ação se action for fornecido (com ou sem redirect)
+  // full render
   return (
     <SimpleButton 
       icon={icon} 
@@ -120,7 +120,7 @@ const Button = ({ icon, label, type = "secondary", redirect, action, className =
   )
 }
 
-// Button list of props
+// button list of props
 Button.propTypes = {
   icon: PropTypes.node,
   label: PropTypes.string,
