@@ -26,6 +26,7 @@ const handleAction = async (action) => {
   if (!condition || condition()) {
     try {
       const targetElement = document.querySelector(target)
+      console.log('Target Element:', targetElement)
       switch (actionType) {
         case 'disable':
           targetElement.classList.add(`${targetElement.className.split(' ').join('-')}-disable`)
