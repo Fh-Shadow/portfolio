@@ -29,8 +29,8 @@ const Main = () => {
                             <div className="skillDescription">
                                 <h5>HTML 5</h5>
                                 <ul>
-                                    <li>Domínio em tabelas e listas</li>
-                                    <li>Bom em APIs e Canvas</li>
+                                    <li>Proficiency in tables and lists</li>
+                                    <li>Good with APIs and Canvas</li>
                                 </ul>
                             </div>
                         </li>
@@ -41,8 +41,8 @@ const Main = () => {
                             <div className="skillDescription">
                                 <h5>CSS 3</h5>
                                 <ul>
-                                    <li>Bom em responsividade</li>
-                                    <li>Domínio em layouts</li>
+                                    <li>Good in responsiveness</li>
+                                    <li>Proficiency in layouts</li>
                                 </ul>
                             </div>
                         </li>
@@ -53,9 +53,9 @@ const Main = () => {
                             <div className="skillDescription">
                                 <h5>JavaScript</h5>
                                 <ul>
-                                    <li>Bom em funções e objetos</li>
-                                    <li>Bom em tratamento de erros</li>
-                                    <li>aprendendo usar módulos</li>
+                                    <li>Good with functions and objects</li>
+                                    <li>Good with error handling</li>
+                                    <li>Learning to use modules</li>
                                 </ul>
                             </div>
                         </li>
@@ -66,7 +66,7 @@ const Main = () => {
                             <div className="skillDescription">
                                 <h5>Python</h5>
                                 <ul>
-                                    <li>aprendendo usar APIs</li>
+                                    <li>Learning to use APIs</li>
                                 </ul>
                             </div>
                         </li>
@@ -77,18 +77,18 @@ const Main = () => {
                             <div className="skillDescription">
                                 <h5>PHP</h5>
                                 <ul>
-                                    <li>bom em tratamento de dados</li>
+                                    <li>Good with data processing</li>
                                 </ul>
                             </div>
                         </li>
                         <li>
                             <div className="skillIcon">
-                                <IonIcon className="skillItem" icon="server-outline" />
+                                <IonIcon className="skillItem" icon="server" />
                             </div>
                             <div className="skillDescription">
                                 <h5>MySQL</h5>
                                 <ul>
-                                    <li>aprendendo segurança de dados</li>
+                                    <li>Learning data security</li>
                                 </ul>
                             </div>
                         </li>
@@ -99,8 +99,8 @@ const Main = () => {
                             <div className="skillDescription">
                                 <h5>React</h5>
                                 <ul>
-                                    <li>aprendendo usar componentização</li>
-                                    <li>aprendendo usar módulos</li>
+                                    <li>Learning to use componentization</li>
+                                    <li>Learning to use modules</li>
                                 </ul>
                             </div>
                         </li>
@@ -108,7 +108,11 @@ const Main = () => {
                 </div>
             </section>
             <section className="mainSection" id="projects">do you</section>
-            <section className="mainSection" id="meet-me">found here?</section>
+            <section className="mainSection" id="meet-me">
+                <div className="meetme">
+                    <h2>Meet me there!</h2>
+                </div>
+            </section>
         </main>
     )
 }
