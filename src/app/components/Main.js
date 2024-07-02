@@ -4,6 +4,7 @@ import Grid from './Grid'
 
 import { IonIcon } from '@ionic/react'
 import { logoHtml5, logoCss3 } from 'ionicons/icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import '../../styles/Main.css'
 
@@ -71,10 +72,10 @@ const Main = () => {
                         </li>
                         <li>
                             <div className="skillIcon">
-                                <IonIcon className="skillItem" icon="server-outline" />
+                                <FontAwesomeIcon icon={['fab', 'php']} className="skillItem" />
                             </div>
                             <div className="skillDescription">
-                                <h5>MySQL</h5>
+                                <h5>PHP</h5>
                                 <ul>
                                     <li>bom em tratamento de dados</li>
                                 </ul>
@@ -87,7 +88,7 @@ const Main = () => {
                             <div className="skillDescription">
                                 <h5>MySQL</h5>
                                 <ul>
-                                    <li>bom em tratamento de dados</li>
+                                    <li>aprendendo segurança de dados</li>
                                 </ul>
                             </div>
                         </li>
