@@ -22,27 +22,41 @@ const handleRedirect = (redirect) => {
 
 // async function for actions
 const handleAction = async (action, targetElement) => {
-  const { type: actionType, target, condition } = action
+  const { type: actionType, target, condition, content, data, method } = action
   if (!condition || condition()) {
     try {
       switch (actionType) {
-        case 'disable': // desable something
+        case 'disable': // disable something
           targetElement.classList.add('disabled')
           break
         case 'enable': // enable something
           targetElement.classList.remove('disabled')
           break
         case 'send': // send something
-          fetch(target, { method: 'POST' })
-          break
-        case 'pull': // pull something
-          fetch(target).then(response => response.json())
+          fetch(target, {
+            method: method || 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data || content),
+          })
           break
         case 'refresh': // refresh something
-          window.location.reload()
+          if (!target || target === 'window') {
+            window.location.reload()
+          } else {
+            const refreshElement = document.querySelector(target)
+            if (refreshElement) {
+              refreshElement.innerHTML = refreshElement.innerHTML // trigger re-render
+            }
+          }
           break
         case 'change': // change something
-          targetElement.textContent = action.content
+          if (typeof targetElement.value === 'boolean') {
+            targetElement.value = !targetElement.value
+          } else {
+            targetElement.textContent = content
+          }
           break
         default: // no parameters error
           console.warn('Unknown action type')
@@ -63,8 +77,8 @@ const handleClick = async (type, redirect, action) => {
 
   if (action) {
     const { target } = action
-    const targetElement = document.querySelector(target)
-    if (targetElement) {
+    const targetElement = target ? document.querySelector(target) : null
+    if (targetElement || action.type === 'refresh') {
       handleAction(action, targetElement)
     } else {
       console.warn(`Element not found for target: ${target}`)
@@ -113,7 +127,7 @@ const Button = ({ icon, label, type = "secondary", redirect, action, className =
       icon={icon} 
       label={label} 
       type={type} 
-      className={className}
+        className={className}
       disabled={disabled}
       handleClick={() => handleClick(type, redirect, action)} 
     />
@@ -136,10 +150,12 @@ Button.propTypes = {
     blank: PropTypes.bool,
   }),
   action: PropTypes.shape({
-    type: PropTypes.oneOf(['disable', 'enable', 'send', 'pull', 'refresh', 'change']).isRequired,
-    target: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['disable', 'enable', 'send', 'refresh', 'change']).isRequired,
+    target: PropTypes.string,
     condition: PropTypes.func,
-    content: PropTypes.string,
+    content: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    data: PropTypes.object,
+    method: PropTypes.string,
   }),
   className: PropTypes.string,
   disabled: PropTypes.bool,

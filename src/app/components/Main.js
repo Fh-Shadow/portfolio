@@ -19,13 +19,7 @@ const Main = () => {
       </section>
       <section className="mainSection" id="my-skills">What</section>
       <section className="mainSection" id="projects">do you</section>
-      <section className="mainSection" id="meet-me">found here?
-        <Button 
-          className="example-button"
-          label="Exemplo" 
-          type="secondary"
-        />
-        
+      <section className="mainSection" id="meet-me">found here?        
         <Button 
           label="Desabilitar" 
           type="error" 
@@ -44,6 +38,15 @@ const Main = () => {
             target: '.example-button', 
             condition: () => true 
           }} 
+        />
+        
+        <Button 
+          className="example-button"
+          label="Exemplo" 
+          type="secondary"
+          action={{
+            type: 'refresh',
+          }}
         />
       </section>
     </main>
