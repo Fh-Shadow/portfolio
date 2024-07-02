@@ -5,16 +5,6 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 100dvh;
-
-    a::after {
-        content: '';
-        position: absolute;
-        bottom: -.3rem;
-        left: 0;
-        right: 0;
-        border: 1px solid var(--theme-accent);
-        border-radius: 1rem;
-    }
 }
 
 .main .mainSection {

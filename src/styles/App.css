@@ -1,12 +1,12 @@
 * {
-  font-family: var(--typo-regular);
-  font-size: var(--typo-size);
-  line-height: var(--typo-height);
-  color: var(--theme-text);
-  scroll-behavior: smooth;
+    font-family: var(--typo-regular);
+    font-size: var(--typo-size);
+    line-height: var(--typo-height);
+    color: var(--theme-text);
+    scroll-behavior: smooth;
 }
 *::selection {
-  background-color: color-mix(in srgb, var(--theme-secondary) 50%, var(--theme-background));
+    background-color: color-mix(in srgb, var(--theme-secondary) 50%, var(--theme-background));
 }
 
 code { font-family: var(--typo-code); }
@@ -22,16 +22,39 @@ h5 { font-size: 1.500rem; line-height: 2.563rem; }
 small { font-size: 0.667rem; line-height: 1.188rem; }
 
 a {
-  color: var(--theme-accent);
-  text-decoration: none;
-  position: relative;
+    color: var(--theme-accent);
+    text-decoration: none;
+    position: relative;
+    transition: all .3s ease-in-out;
+    
+    &:hover {
+        color: color-mix(in srgb, var(--theme-accent) 50%, var(--theme-background));
+        transition: all .3s ease-in-out;
+    }
 }
 
 .App, html, body {
-  min-height: 100dvh;
-  overflow-x: hidden;
+    min-height: 100dvh;
+    overflow-x: hidden;
 }
 
 .App {
-  display: flex;
+    display: grid;
+}
+
+.main, .footer {
+    a::after {
+        content: '';
+        position: absolute;
+        bottom: -.1rem;
+        left: 0;
+        right: 0;
+        border: 1px solid var(--theme-accent);
+        border-radius: 1rem;
+        transition: all .3s ease-in-out;
+    }
+    
+    a:hover::after {
+        transform: scale(50%);
+    }
 }

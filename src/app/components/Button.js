@@ -5,8 +5,8 @@ import '../../styles/Button.css'
 // create button with basic parameters
 const SimpleButton = ({ icon, label, type, className, disabled, handleClick }) => (
     <button className={`button button-${type} ${className} ${disabled ? 'disabled' : ''}`} disabled={disabled} onClick={handleClick}>
-      {icon && <div className="buttonIcon">{icon}</div>}
-      {label && <div className="buttonLabel">{label}</div>}
+        {icon && <div className="buttonIcon">{icon}</div>}
+        {label && <div className="buttonLabel">{label}</div>}
   </button>
 )
 
