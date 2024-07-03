@@ -115,9 +115,13 @@
     transition: all .3s ease-in-out;
 }
 
-.meetme {
+.main .mainSection:nth-child(4) {
     display: grid;
     place-items: center;
+}
+
+.meetme h2 {
+    text-align: center;
 }
 
 .meetDescription p {
