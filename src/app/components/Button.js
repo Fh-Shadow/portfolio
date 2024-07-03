@@ -88,7 +88,7 @@ const handleClick = async (type, redirect, action) => {
 }
 
 // main button
-const Button = ({ icon, label, type = "secondary", redirect, action, className = '', disabled = false }) => {
+const Button = ({ icon, label, type = 'secondary', redirect, action, className = '', disabled = false }) => {
     // icon & label verification
     if (!icon && !label) {
         throw new Error('Either <icon> or <label> must be provided')
@@ -140,11 +140,11 @@ Button.propTypes = {
     icon: PropTypes.node,
     label: PropTypes.string,
     type: PropTypes.oneOf([
-        "primary",
-        "secondary",
-        "success",
-        "error",
-        "warning",
+        'primary',
+        'secondary',
+        'success',
+        'error',
+        'warning',
     ]),
     redirect: PropTypes.shape({
         url: PropTypes.string.isRequired,
