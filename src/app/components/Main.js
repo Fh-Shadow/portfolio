@@ -7,7 +7,6 @@ import { logoHtml5, logoCss3 } from 'ionicons/icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import '../../styles/Main.css'
-import myselfImage from '../../assets/myself.png'
 
 const Main = () => {
     return (
