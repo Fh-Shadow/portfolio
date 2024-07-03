@@ -37,24 +37,13 @@
     }
 }
 
-@keyframes move-grid {
-    from {
-      transform: translateX(0);
-    }
-    to {
-        transform: translateX(100%);
-    }
-}
-
 .gridContainer {
     position: absolute;
-    top: -20rem;
-    right: 20rem;
+    top: -25rem;
+    right: -15rem;
 
     rotate: -20deg;
     scale: 90%;
-    animation: move-grid .3s ease-in-out;
-    animation-timeline: view();
 }
 
 .gridContainer::after {
