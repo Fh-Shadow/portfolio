@@ -28,7 +28,7 @@ module.exports = {
     rules: {
         'no-unused-vars': 'warn',
         'react/prop-types': 'off',
-        'quotes': ['error', 'single', { 'avoidEscape': true, 'allowTemplateLiterals': true }],
+        'quotes': ['error', 'single', { 'allowDouble': true, 'avoidEscape': true }],
         'no-undef': 'error',
         'no-constant-condition': ['error', { 'checkLoops': false }],
         'react/no-unescaped-entities': 'off'
