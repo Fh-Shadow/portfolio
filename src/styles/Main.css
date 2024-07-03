@@ -114,3 +114,23 @@
 
     transition: all .3s ease-in-out;
 }
+
+.meetme {
+    display: grid;
+    place-items: center;
+}
+
+.meetDescription p {
+    max-width: 800px;
+    
+    text-align: justify;
+    text-indent: 2rem;
+
+    margin-bottom: .5rem;
+}
+
+.meetDescription div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

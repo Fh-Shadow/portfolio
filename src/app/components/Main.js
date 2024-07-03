@@ -7,6 +7,7 @@ import { logoHtml5, logoCss3 } from 'ionicons/icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import '../../styles/Main.css'
+import myselfImage from '../../assets/myself.png'
 
 const Main = () => {
     return (
@@ -111,11 +112,9 @@ const Main = () => {
             <section className="mainSection" id="meet-me">
                 <div className="meetme">
                     <h2>Meet me there!</h2>
-                    <div className="meetContainer">
-                        <div class="meetImage">
-                            <img src="../../assets/myself.svg" alt="Hello! It's me Flávio" />
-                        </div>
-                        <div className="meetDescription">
+                    <div className="meetDescription">
+                        <p>My name is Flávio Henrique Perusin de Souza. I'm a high school student studying integrated computer science at Eniac. I'm fascinated by interfaces and aesthetics, with the aim of turning dreams into reality. Look me up on an online platform! I'll be waiting for you there ;)</p>
+                        <div>
                             <Button
                                 label="See my Github"
                                 icon={<IonIcon icon="logo-github" />}
