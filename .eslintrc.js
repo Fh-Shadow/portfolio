@@ -3,6 +3,7 @@ module.exports = {
     env: {
         browser: true,
         es6: true,
+        node: true // Adicionar isso
     },
     extends: [
         'eslint:recommended',
@@ -27,5 +28,22 @@ module.exports = {
     rules: {
         'no-unused-vars': 'warn',
         'react/prop-types': 'off',
+        'quotes': ['error', 'single'],
+        'no-undef': [
+            'error', 
+            {
+                "typeof": true
+            }
+        ],
+        'no-constant-condition': [
+            'error',
+            {
+                "checkLoops": false
+            }
+        ],
     },
-}  
+    globals: {
+        module: 'writable',
+        require: 'writable'
+    }
+}
