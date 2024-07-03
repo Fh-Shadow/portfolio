@@ -3,7 +3,7 @@ module.exports = {
     env: {
         browser: true,
         es6: true,
-        node: true // Adicionar isso
+        node: true
     },
     extends: [
         'eslint:recommended',
@@ -28,19 +28,10 @@ module.exports = {
     rules: {
         'no-unused-vars': 'warn',
         'react/prop-types': 'off',
-        'quotes': ['error', 'single'],
-        'no-undef': [
-            'error', 
-            {
-                "typeof": true
-            }
-        ],
-        'no-constant-condition': [
-            'error',
-            {
-                "checkLoops": false
-            }
-        ],
+        'quotes': ['error', 'single', { 'avoidEscape': true, 'allowTemplateLiterals': true }],
+        'no-undef': 'error',
+        'no-constant-condition': ['error', { 'checkLoops': false }],
+        'react/no-unescaped-entities': 'off'
     },
     globals: {
         module: 'writable',
